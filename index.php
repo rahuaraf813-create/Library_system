@@ -1,2 +1,4 @@
 <html>
-    i love you arapath
+<head>
+    <title>Library System</title>
+    <link rel="stylesheet" href="style.css">
