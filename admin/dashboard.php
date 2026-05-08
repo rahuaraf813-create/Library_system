@@ -2,64 +2,62 @@
     include '../config/db.php'; 
     include '../includes/header.php'; 
 
-    // Humanizing the data: Define variables for clarity
     $leaderName     = "Leader"; 
     $dbStatus       = $conn ? "CONNECTED" : "DISCONNECTED";
     $statusColor    = $conn ? "success" : "danger";
 ?>
 
-<header class="mb-5">
-    <h2 class="fw-bold text-dark">Welcome back, <?php echo $leaderName; ?>!</h2>
-    <p class="text-secondary">Here is your system integration overview for today.</p>
+<header class="mb-5 border-bottom pb-3">
+    <h2 class="fw-bold text-dark">Welcome, <?php echo $leaderName; ?></h2>
+    <p class="text-secondary mb-0">Project Integration Control Panel</p>
 </header>
 
 <div class="row g-4">
 
-    <article class="col-md-4">
-        <div class="card border-0 shadow-sm h-100 p-3">
-            <div class="card-body text-center">
-                <div class="bg-light rounded-circle py-4 mb-3 mx-auto" style="width: 80px;">
-                    <i class="fas fa-server fa-2x text-primary"></i>
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <h6 class="text-uppercase text-muted small fw-bold">System Layer 01</h6>
+                <h4 class="fw-bold mb-3">Database</h4>
+                <p class="text-muted small">Validating the link between PHP and MySQL server.</p>
+                <div class="pt-2">
+                    <span class="badge rounded-0 bg-<?php echo $statusColor; ?> w-100 py-2">
+                        <?php echo $dbStatus; ?>
+                    </span>
                 </div>
-                <h5 class="fw-bold">Database Server</h5>
-                <p class="small text-muted">Checking connection to MySQL...</p>
-                <span class="badge rounded-pill bg-<?php echo $statusColor; ?> px-4 py-2">
-                    <?php echo $dbStatus; ?>
-                </span>
             </div>
         </div>
-    </article>
+    </div>
 
-    <article class="col-md-4">
-        <div class="card border-0 shadow-sm h-100 p-3">
-            <div class="card-body text-center">
-                <div class="bg-light rounded-circle py-4 mb-3 mx-auto" style="width: 80px;">
-                    <i class="fas fa-palette fa-2x text-info"></i>
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <h6 class="text-uppercase text-muted small fw-bold">System Layer 02</h6>
+                <h4 class="fw-bold mb-3">Interface</h4>
+                <p class="text-muted small">Checking local Bootstrap CSS file availability.</p>
+                <div class="pt-2">
+                    <div class="bg-info text-white text-center py-1 fw-bold small">
+                        STYLING ACTIVE
+                    </div>
                 </div>
-                <h5 class="fw-bold">User Interface</h5>
-                <p class="small text-muted">Bootstrap 5 Styling engine</p>
-                <button class="btn btn-info text-white w-100 rounded-pill fw-bold mt-2">
-                    STYLING ACTIVE
-                </button>
             </div>
         </div>
-    </article>
+    </div>
 
-    <article class="col-md-4">
-        <div class="card border-0 shadow-sm h-100 p-3">
-            <div class="card-body text-center">
-                <div class="bg-light rounded-circle py-4 mb-3 mx-auto" style="width: 80px;">
-                    <i class="fas fa-microchip fa-2x text-warning"></i>
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <h6 class="text-uppercase text-muted small fw-bold">System Layer 03</h6>
+                <h4 class="fw-bold mb-3">Operations</h4>
+                <p class="text-muted small">Testing JavaScript event handling and footer links.</p>
+                <div class="pt-2">
+                    <button class="btn btn-dark btn-sm w-100 rounded-0" onclick="alert('Operations Check: Passed')">
+                        RUN DIAGNOSTIC
+                    </button>
                 </div>
-                <h5 class="fw-bold">System Logic</h5>
-                <p class="small text-muted">JavaScript & Event Handlers</p>
-                <button class="btn btn-warning text-white w-100 rounded-pill fw-bold mt-2 shadow-sm" 
-                        onclick="alert('System Logic is healthy!')">
-                    DIAGNOSTIC TEST
-                </button>
             </div>
         </div>
-    </article>
+    </div>
 
 </div>
 
