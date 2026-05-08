@@ -1,36 +1,34 @@
-<?php 
+<?php
 include '../config/db.php';
-include '../includes/header.php'; 
+include '../includes/header.php';
 
+$book_res = $conn->query("SELECT COUNT(*) as total FROM book");
+$book_data = $book_res->fetch_assoc();
 
-$book_count = $conn->query("SELECT id FROM books")->num_rows;
-$member_count = $conn->query("SELECT id FROM members")->num_rows;
-$fine_total = $conn->query("SELECT SUM(fine_amount) as total FROM fines")->fetch_assoc();
+$member_res = $conn->query("SELECT COUNT(*) as total FROM member");
+$member_data = $member_res->fetch_assoc();
+
+$user_res = $conn->query("SELECT COUNT(*) as total FROM user");
+$user_data = $user_res->fetch_assoc();
 ?>
 
 <div class="row">
     <div class="col-md-4">
-        <div class="card bg-primary text-white mb-4">
-            <div class="card-body">
-                <h5>Total Books</h5>
-                <h2><?php echo $book_count; ?></h2>
-            </div>
+        <div class="card bg-primary text-white p-4">
+            <h3>Books</h3>
+            <p class="display-6"><?php echo $book_data['total']; ?></p>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="card bg-success text-white mb-4">
-            <div class="card-body">
-                <h5>Total Members</h5>
-                <h2><?php echo $member_count; ?></h2>
-            </div>
+        <div class="card bg-success text-white p-4">
+            <h3>Members</h3>
+            <p class="display-6"><?php echo $member_data['total']; ?></p>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="card bg-danger text-white mb-4">
-            <div class="card-body">
-                <h5>Pending Fines</h5>
-                <h2>Rs. <?php echo number_format($fine_total['total'], 2); ?></h2>
-            </div>
+        <div class="card bg-info text-white p-4">
+            <h3>Staff</h3>
+            <p class="display-6"><?php echo $user_data['total']; ?></p>
         </div>
     </div>
 </div>
