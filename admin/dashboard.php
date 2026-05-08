@@ -2,7 +2,6 @@
 include '../config/db.php';
 include '../includes/header.php'; 
 
-// Fetch totals for the dashboard cards
 $book_count = $conn->query("SELECT id FROM books")->num_rows;
 $member_count = $conn->query("SELECT id FROM members")->num_rows;
 $fine_total = $conn->query("SELECT SUM(fine_amount) as total FROM fines")->fetch_assoc();
