@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Management System</title>
     
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/css/style.css">
     
     <style>
         .navbar { margin-bottom: 30px; }
