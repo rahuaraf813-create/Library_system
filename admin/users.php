@@ -1,4 +1,5 @@
 <?php 
+include '../includes/session_check.php'; 
 include '../config/db.php'; 
 include '../includes/header.php'; 
 $sql = "SELECT user_id, first_name, last_name, email, username FROM user";
